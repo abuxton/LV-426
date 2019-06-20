@@ -17,3 +17,7 @@ To understand what this contains, also start from https://www.liatrio.com/blog/s
 
 * AWS, ~/aws/credentials is obviously required.
 
+### Interfaces
+
+* AWS, https://console.aws.amazon.com/ obv. you need to know where the AWS console is so you can do the initial config and or setup.
+* Azure, https://portal.azure.com, cos why use one cloud when you can hybridize (is that even a word)
