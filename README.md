@@ -5,8 +5,15 @@ A host repository for experimenting with terraform and related tools (hence the 
 
 Also to collect tools in relevant reference file, based on tooling from an OSX workstation (hence Brewfile, bundler etc)
 
+To understand what this contains, also start from https://www.liatrio.com/blog/secure-aws-account-structure-with-terraform-and-terragrunt as an approach and some pre requisites. 
+
 ### Tools
 
 * tfenv, akin to rbenv or pyenv for terraform version management
 * terraform, https://learn.hashicorp.com/terraform/getting-started/install.html installed vua `tfenv`. 
 * terragrunt, https://github.com/gruntwork-io/terragrunt 
+
+### Config
+
+* AWS, ~/aws/credentials is obviously required.
+
