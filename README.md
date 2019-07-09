@@ -6,13 +6,14 @@ A host repository for experimenting with terraform and related tools (hence the 
 Also to collect tools in relevant reference file, based on tooling from an OSX workstation (hence Brewfile, bundler etc)
 
 To understand what this contains, also start from https://www.liatrio.com/blog/secure-aws-account-structure-with-terraform-and-terragrunt as an approach and some pre requisites. 
+Some one beat me to this little project but i'm going to use it a a reference not a blocker to self learning http://eddwardo.github.io/terraform/cloud/iac/2019/06/24/terraform-project-structure/
 
 ### Tools
 
 * tfenv, akin to rbenv or pyenv for terraform version management
 * terraform, https://learn.hashicorp.com/terraform/getting-started/install.html installed vua `tfenv`. 
 * terragrunt, https://github.com/gruntwork-io/terragrunt 
-* Atlantis, if you are going to C(x) from sourec you may as well use source to log. https://github.com/runatlantis/atlantis
+* Atlantis, if you are going to C(x) from source you may as well use source to log. https://github.com/runatlantis/atlantis
 
 ### Config
 
