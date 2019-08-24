@@ -13,7 +13,9 @@ Some one beat me to this little project but i'm going to use it a a reference no
 * tfenv, akin to rbenv or pyenv for terraform version management
 * terraform, https://learn.hashicorp.com/terraform/getting-started/install.html installed vua `tfenv`. 
 * terragrunt, https://github.com/gruntwork-io/terragrunt 
-* Atlantis, if you are going to C(x) from source you may as well use source to log. https://github.com/runatlantis/atlantis
+
+* Atlantis, if you are going to C(x) from sourec you may as well use source to log. https://github.com/runatlantis/atlantis
+* Terraform Import extras, https://github.com/dtan4/terraforming
 
 ### Config
 
