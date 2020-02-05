@@ -20,6 +20,7 @@ Some one beat me to this little project but i'm going to use it a a reference no
 ### Config
 
 * AWS, ~/aws/credentials is obviously required.
+* aws policy, for the terraform or terragrunt admin group for managing state https://github.com/gruntwork-io/terragrunt/blob/master/docs/_docs/02_features/aws-auth.md#aws-iam-policies
 
 ### Interfaces
 
