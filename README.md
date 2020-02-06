@@ -16,6 +16,11 @@ Some one beat me to this little project but I'm going to use it a a reference no
 
 * Atlantis, if you are going to C(x) from source you may as well use source to log. https://github.com/runatlantis/atlantis
 * Terraform Import extras, https://github.com/dtan4/terraforming
+* Puppet/Bolt Provisioner 
+  * https://puppet.com/blog/cloud-provisioning-terraform-and-bolt/ 
+  * https://www.terraform.io/docs/provisioners/puppet.html
+  * https://github.com/rodjek/terraform-provisioner-puppet
+* 
 
 ### Config
 
