@@ -10,7 +10,7 @@ Some one beat me to this little project but I'm going to use it a a reference no
 
 ### Tools
 
-* tfenv, akin to rbenv or pyenv for terraform version management
+* tfenv, akin to rbenv or pyenv for terraform version management https://github.com/tfutils/tfenv 
 * terraform, https://learn.hashicorp.com/terraform/getting-started/install.html installed via `tfenv`. 
 * terragrunt, https://github.com/gruntwork-io/terragrunt 
 
