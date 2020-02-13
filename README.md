@@ -38,3 +38,4 @@ Some one beat me to this little project but I'm going to use it a a reference no
 ### Links
 
 * https://github.com/shuaibiyy/awesome-terraform 
+* https://github.com/brikis98/terraform-up-and-running-code/tree/master/code/terraform
