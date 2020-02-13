@@ -20,7 +20,8 @@ Some one beat me to this little project but I'm going to use it a a reference no
   * https://puppet.com/blog/cloud-provisioning-terraform-and-bolt/ 
   * https://www.terraform.io/docs/provisioners/puppet.html
   * https://github.com/rodjek/terraform-provisioner-puppet
-* 
+* security scanning .tf https://github.com/liamg/tfsec, and associated workflow https://github.com/marketplace/actions/terraform-security-scan
+* github workflows, https://github.com/marketplace?utf8=%E2%9C%93&query=terraform 
 
 ### Config
 
