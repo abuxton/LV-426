@@ -1,0 +1,14 @@
+name: TerraGrunt CI Testing
+
+on:
+  push:
+    branches-ignore:  
+    - 'master'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: "hashicorp/terraform-github-actions/fmt@v0.4.6"
+    - uses: "hashicorp/terraform-github-actions/validate@v0.4.6"
