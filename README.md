@@ -40,3 +40,4 @@ Some one beat me to this little project but I'm going to use it a a reference no
 * https://github.com/shuaibiyy/awesome-terraform 
 * https://github.com/brikis98/terraform-up-and-running-code/tree/master/code/terraform
 * https://testdriven.io/blog/running-vault-and-consul-on-kubernetes/
+* https://kubernetes.io/docs/tasks/tools/install-minikube/
