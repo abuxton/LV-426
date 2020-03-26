@@ -35,6 +35,10 @@ Some one beat me to this little project but I'm going to use it a a reference no
 * AWS, https://console.aws.amazon.com/ obv. you need to know where the AWS console is so you can do the initial config and or setup.
 * Azure, https://portal.azure.com, cos why use one cloud when you can hybridize (is that even a word)
 
+## intergration
+
+* https://github.com/timidri/terraform-aws-pe_arch
+
 ### Links
 
 * https://github.com/shuaibiyy/awesome-terraform 
