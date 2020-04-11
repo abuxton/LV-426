@@ -9,3 +9,14 @@ remote_state {
     dynamodb_table = "lv-426-lock-table"
   }
 }
+terraform {
+
+  extra_arguments "common_vars" {
+    commands = ["plan", "apply"]
+
+    arguments = [
+    #  "-var-file=../common.tfvars",
+    #  "-var-file=../region.tfvars"
+    ]
+  }
+}
