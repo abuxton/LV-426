@@ -27,3 +27,18 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+
+# terragrunt https://github.com/gruntwork-io/terragrunt/blob/master/.gitignore
+
+.*.sw?
+.idea
+terragrunt.iml
+vendor
+.terraform
+.vscode
+*.tfstate
+*.tfstate.backup
+*.out
+.terragrunt-cache
+.bundle
+.ruby-version
