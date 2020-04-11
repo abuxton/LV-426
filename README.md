@@ -47,3 +47,7 @@ Some one beat me to this little project but I'm going to use it a a reference no
 * https://kubernetes.io/docs/tasks/tools/install-minikube/
 * https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 * https://medium.com/faun/10-useful-kubernetes-tools-ddffa62089cc
+
+#### helpful
+
+* https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
