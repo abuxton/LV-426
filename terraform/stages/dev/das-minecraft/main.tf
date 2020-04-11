@@ -24,7 +24,6 @@ resource "aws_s3_bucket" "b" {
 
 module "minecraft" {
   source = "git@github.com:abuxton/terraform-aws-minecraft.git?ref=master"
-  module_depends_on = ["aws_s3_bucket.${local.bucket_id}"]
   key_name      = local.key_name
   bucket_id     = local.bucket_id
   vpc_id        = local.vpc_id
