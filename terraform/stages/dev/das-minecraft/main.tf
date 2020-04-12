@@ -8,7 +8,7 @@ locals {
   vpc_id        = "vpc-6ab4cd02"
   subnet_id     = "subnet-e64cc39c"
   mc_version    = "1.15.2" 
-  mc_root       = "/opt/minecraft"
+  mc_root       = "/opt/minecraft/vanilla"
 }
 
 resource "aws_s3_bucket" "b" {
