@@ -16,4 +16,5 @@ locals {
   subnet_id     		= "subnet-e64cc39c"
   # Extract out common variables for reuse
   env 							=	local.environment_vars.locals.environment
+	region						= local.environment_vars.locals.region
 }
