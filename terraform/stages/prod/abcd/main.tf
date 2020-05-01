@@ -50,6 +50,9 @@ resource "aws_route53_record" "blog" {
   records = ["abuxton.github.io"]
 	depends_on = [module.route53.zone_id]
 }
+## you don't seam to be able to do this with terraform it needs a server dependency based on dns_a_record_set.smtp
+## it gets into `Error: update server is not set` issues, manually had to edit state and dynamoDB lock md5 as suggested by error message.
+## leaving here for reference.
 # resource "dns_mx_record_set" "mx" {
 #   zone = "abcdevelopment.co.uk."
 #   ttl  = 300
