@@ -1,7 +1,4 @@
 # variables
-variable "region" {
-  default = "us-east-1"
-}
 variable "amis" {
   type = map(string)
   default = {
@@ -16,10 +13,15 @@ variable "aws_secret_access_key" {
   default = null
 }
 
-variable "name" {
-  default = null
+variable "region" {
+  description = "This is the cloud hosting region where your webapp will be deployed."
+  default     = "us-east-1"
 }
 
 variable "prefix" {
-  default = "dev"
+  description = "This is the environment your webapp will be prefixed with. dev, qa, or prod"
+}
+
+variable "name" {
+  description = "Your name to attach to the webapp address"
 }
