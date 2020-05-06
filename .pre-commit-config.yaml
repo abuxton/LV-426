@@ -5,6 +5,7 @@ repos:
       - id: terraform-fmt
       - id: terraform-validate
       - id: tflint
+
 #       - id: shellcheck
 #       - id: gofmt
 #       - id: golint

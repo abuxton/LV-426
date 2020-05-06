@@ -1,7 +1,8 @@
 provider "aws" {
   #profile    = "default"
   #region     = "us-east-1"
-  region     = var.region
+  region = var.aws_region
+	version = "~> 2.60"
 }
 
 resource "aws_instance" "example" {
@@ -15,8 +16,8 @@ resource "aws_instance" "example" {
 }
 
 resource "aws_eip" "ip" {
-    vpc = true
-    instance = aws_instance.example.id
+  vpc      = true
+  instance = aws_instance.example.id
 
 }
 output "ip" {
