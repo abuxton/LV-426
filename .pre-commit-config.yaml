@@ -5,7 +5,19 @@ repos:
       - id: terraform-fmt
       - id: terraform-validate
       - id: tflint
-
 #       - id: shellcheck
 #       - id: gofmt
 #       - id: golint
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.5.0 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
+    hooks:
+      -  id: trailing-whitespace
+      -  id: end-of-file-fixer
+      -  id: check-docstring-first
+      -  id: check-json
+      -  id: check-added-large-files
+      -  id: check-yaml
+      -  id: pretty-format-json
+      -  id: detect-aws-credentials
+      -  id: detect-private-key
