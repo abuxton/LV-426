@@ -1,8 +1,8 @@
 provider "aws" {
   #profile    = "default"
   #region     = "us-east-1"
-  region = var.aws_region
-	version = "~> 2.60"
+  region  = var.aws_region
+  version = "~> 2.60"
 }
 
 resource "aws_instance" "example" {
