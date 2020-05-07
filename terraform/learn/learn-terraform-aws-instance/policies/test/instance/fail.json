@@ -1,0 +1,9 @@
+{
+	"global": {
+	   "instance_type": "t2.nano"
+	 },
+	 "test": {
+	   "main": false,
+	   "instance_type_is_medium": false
+	 }
+   }
