@@ -1,9 +1,0 @@
-import "tfplan"
-
-main = rule {
-    all tfplan.resources.aws_instance as _, instances {
-        all instances as _, r {
-            r.applied.tags else null is not null
-        }
-    }
-}

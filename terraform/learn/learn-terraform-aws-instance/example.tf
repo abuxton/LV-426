@@ -6,7 +6,10 @@ provider "aws" {
 resource "aws_instance" "example" {
   ami           = var.amis[var.region]
   instance_type = "t2.micro"
-
+  tags = {
+    Name  = "example"
+    Owner = var.name
+  }
   provisioner "local-exec" {
     command = "echo ${self.public_ip} > ip_address.txt"
   }
