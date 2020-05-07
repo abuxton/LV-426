@@ -6,12 +6,6 @@ variable "amis" {
     "us-west-2" = "ami-4b32be2b"
   }
 }
-variable "aws_access_key_id" {
-  default = null
-}
-variable "aws_secret_access_key" {
-  default = null
-}
 
 variable "region" {
   description = "This is the cloud hosting region where your webapp will be deployed."

@@ -1,4 +1,4 @@
 variable "user" {
-  type = string
+  type    = string
   default = "abuxton"
 }
