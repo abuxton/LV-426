@@ -8,8 +8,8 @@ repos:
       - id: terraform-validate
       - id: tflint
 #       - id: shellcheck
-#       - id: gofmt
-#       - id: golint
+      - id: gofmt
+      - id: golint
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.5.0 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
