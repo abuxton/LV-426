@@ -28,3 +28,14 @@ repos:
     hooks:
 #       - id: terraform_tfsec
       - id: terraform_docs
+  - repo: https://github.com/syntaqx/git-hooks
+    rev: v0.0.16
+    hooks:
+#       - id: circleci-config-validate
+      - id: forbid-binary
+      - id: go-fmt
+#       - id: go-test
+      - id: go-mod-tidy
+      - id: go-generate
+#       - id: shellcheck
+#       - id: shfmt
