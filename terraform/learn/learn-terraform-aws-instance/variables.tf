@@ -13,6 +13,8 @@ variable "region" {
 }
 
 variable "prefix" {
+  type        = string
+  default     = "learn"
   description = "This is the environment your webapp will be prefixed with. dev, qa, or prod"
 }
 
