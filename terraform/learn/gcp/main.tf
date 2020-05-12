@@ -1,7 +1,7 @@
 provider "google" {
   version = "3.5.0"
 
-  credentials = file("./lv-426-c933bf4e69fb.json")
+  credentials = file("./lv-426-c933bf4e69fb.json.ignore")
 
   project = "lv-426-277007"
   region  = "us-central1"
