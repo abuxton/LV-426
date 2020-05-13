@@ -8,12 +8,14 @@ terraform {
     organization = "abc-hashi-training"
 
     workspaces {
-      name = "aws-tfe"
+      name = "aws-tfe-test"
     }
   }
 
   required_providers {
     aws      = "~> 2.58.0"
     template = "~> 2.1.2"
+    random   = "~> 2.2.0"
+
   }
 }
