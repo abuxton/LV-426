@@ -1,4 +1,5 @@
 **/forks/*
+**/certs/*
 # Local .terraform directories
 **/.terraform/*
 
