@@ -33,6 +33,7 @@ Some one beat me to this little project but I'm going to use it a a reference no
 * AWS policy, for the Terraform or Terragrunt admin group for managing state https://github.com/gruntwork-io/terragrunt/blob/master/docs/_docs/02_features/aws-auth.md#aws-iam-policies
 * command line and credentials, https://blog.gruntwork.io/authenticating-to-aws-with-the-credentials-file-d16c0fbcbf9e
 * gitignore, https://github.com/github/gitignore/blob/master/Terraform.gitignore
+* https://www.terraform.io/docs/commands/cli-config.html#credentials
 
 ### Interfaces
 
@@ -56,3 +57,4 @@ Some one beat me to this little project but I'm going to use it a a reference no
 #### helpful
 
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
+* https://www.terraform.io/docs/backends/types/remote.html#excluding-files-from-upload-with-terraformignore

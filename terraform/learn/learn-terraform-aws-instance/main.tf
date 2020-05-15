@@ -1,9 +1,10 @@
 terraform {
   backend "remote" {
-    organization = "abc-hashi-training"
+    hostname     = "hashiqube.io"
+    organization = "abc-hashiqube"
 
     workspaces {
-      name = "learn_hashicorp_com"
+      name = "learn-terraform-aws-instance"
     }
   }
 }
