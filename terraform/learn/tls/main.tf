@@ -33,9 +33,11 @@ resource "tls_self_signed_cert" "acme_ca" {
   validity_period_hours = 87659
 
   allowed_uses = [
+    "key_encipherment",
     "digital_signature",
+    "server_auth",
+    "client_auth",
     "cert_signing",
-    "crl_signing",
   ]
 }
 
