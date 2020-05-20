@@ -26,7 +26,7 @@ Some one beat me to this little project but I'm going to use it a a reference no
 * https://github.com/gruntwork-io/pre-commit
 * https://github.com/abuxton/terraform-module-template #reference for tf module files.
 * https://github.com/servian/hashiqube/ all in a box
-
+* tf docs, https://github.com/segmentio/terraform-docs
 ### Config
 
 * AWS, ~/aws/credentials is obviously required.
