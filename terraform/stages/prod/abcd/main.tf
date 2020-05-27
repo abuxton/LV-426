@@ -1,4 +1,5 @@
 
+
 module "route53" {
   source = "git::https://github.com/clouddrove/terraform-aws-route53.git?ref=tags/0.12.0"
   name   = "route53"
@@ -23,13 +24,17 @@ module "route53" {
   }
 }
 
+
 resource "aws_route53_record" "www" {
-  zone_id    = module.route53.zone_id
-  name       = "www"
-  type       = "CNAME"
-  ttl        = "300"
-  records    = ["blog.abcdevelopment.co.uk"]
-  depends_on = [module.route53.zone_id]
+  #  fqdn    = "www.abcdevelopment.co.uk"
+  name    = "www"
+  type    = "CNAME"
+  zone_id = module.route53.zone_id
+  alias {
+    evaluate_target_health = false
+    name                   = "blog.abcdevelopment.co.uk"
+    zone_id                = module.route53.zone_id
+  }
 }
 resource "aws_route53_record" "mail" {
   zone_id    = module.route53.zone_id
@@ -65,7 +70,7 @@ resource "aws_route53_record" "lv-426" {
   // ]
   ttl     = 300
   type    = "NS"
-  zone_id = "Z0987161QT7M8Q43CAL6"
+  zone_id = module.route53.zone_id
 }
 
 resource "aws_route53_record" "mx" {
@@ -79,7 +84,7 @@ resource "aws_route53_record" "mx" {
   ]
   ttl     = 300
   type    = "MX"
-  zone_id = "Z0987161QT7M8Q43CAL6"
+  zone_id = module.route53.zone_id
 }
 resource "aws_key_pair" "tg_user" {
   # (resource arguments)
