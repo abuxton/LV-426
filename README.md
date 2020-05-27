@@ -44,6 +44,7 @@ Some one beat me to this little project but I'm going to use it a a reference no
 ## intergration
 
 * https://github.com/timidri/terraform-aws-pe_arch
+* Vault and TF, https://www.hashicorp.com/resources/using-dynamic-secrets-in-terraform/
 
 ### Links
 
