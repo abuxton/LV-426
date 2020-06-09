@@ -2,6 +2,7 @@
 **/certs/*
 # Local .terraform directories
 **/.terraform/*
+**/learn/*
 
 # .tfstate files
 *.tfstate
