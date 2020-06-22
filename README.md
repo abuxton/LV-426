@@ -27,6 +27,8 @@ Some one beat me to this little project but I'm going to use it a a reference no
 * https://github.com/abuxton/terraform-module-template #reference for tf module files.
 * https://github.com/servian/hashiqube/ all in a box
 * tf docs, https://github.com/segmentio/terraform-docs
+* output improvement https://github.com/coinbase/terraform-landscape 
+
 ### Config
 
 * AWS, ~/aws/credentials is obviously required.
