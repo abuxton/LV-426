@@ -9,6 +9,7 @@ locals {
   subnet_id  = "subnet-e64cc39c"
   mc_version = "1.15.2"
   mc_root    = "/opt/minecraft/vanilla"
+  mc_ami     = "ami-0b1912235a9e70540"
 }
 
 resource "aws_s3_bucket" "b" {
@@ -30,5 +31,5 @@ module "minecraft" {
   subnet_id  = local.subnet_id
   mc_version = local.mc_version
   mc_root    = local.mc_root
+  ami        = local.mc_ami
 }
-
