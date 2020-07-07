@@ -1,7 +1,0 @@
-main = rule {
-  instance_type_is_medium
-}
-
-instance_type_is_medium = rule {
-  instance_type is "t2.medium"
-}
