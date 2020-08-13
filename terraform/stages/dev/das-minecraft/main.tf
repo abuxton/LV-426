@@ -33,3 +33,12 @@ module "minecraft" {
   mc_root    = local.mc_root
   ami        = local.mc_ami
 }
+
+data "template_file" "ssh_config" {
+  # count = "${length(module.minecraft.public_ip[0])}"
+  template = "${file("./templates/ssh_config.tmpl")}"
+  vars = {
+    count = "${length(module.minecraft.public_ip)}"
+    ip    = "${module.minecraft.public_ip[0]}"
+  }
+}
