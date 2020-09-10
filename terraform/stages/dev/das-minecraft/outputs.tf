@@ -10,3 +10,8 @@ output "ssh_config" {
   value       = "${data.template_file.ssh_config.rendered}"
   description = "ssh config file entry"
 }
+
+// output "bolt_inventory" {
+//   value       = "${data.template_file.bolt_inventory.rendered}"
+//   description = "Puppet Bolt inventory file entry"
+// }

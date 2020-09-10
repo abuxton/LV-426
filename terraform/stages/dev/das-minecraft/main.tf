@@ -42,3 +42,12 @@ data "template_file" "ssh_config" {
     ip    = "${module.minecraft.public_ip[0]}"
   }
 }
+
+// data "template_file" "bolt_inventory" {
+//   # count = "${length(module.minecraft.public_ip[0])}"
+//   template = "${file("./templates/bolt_inventory.tmpl")}"
+//   vars = {
+//     count = "${length(module.minecraft.public_ip)}"
+//     ip    = "${module.minecraft.public_ip[0]}"
+//   }
+// }
