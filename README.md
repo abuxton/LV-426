@@ -30,6 +30,7 @@ Some one beat me to this little project but I'm going to use it a a reference no
 * output improvement https://github.com/coinbase/terraform-landscape
 * graphing or resources and state data manipulation https://github.com/camptocamp/terraboard
 * opinionated development kit https://github.com/boltops-tools/terraspace
+* pipeline validation https://github.com/GoogleCloudPlatform/terraform-validator
 
 ### Config
 
