@@ -15,7 +15,7 @@ locals {
 resource "aws_s3_bucket" "b" {
   bucket = local.bucket_id
   acl    = "private"
-  region = "eu-west-2"
+  #region = "eu-west-2"
   tags = {
     Name        = local.bucket_id
     Environment = "Dev"
