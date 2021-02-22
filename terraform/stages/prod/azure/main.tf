@@ -90,6 +90,30 @@ resource "azurerm_virtual_machine" "vm" {
     disable_password_authentication = false
   }
 }
+# create a windows vm
+resource "azurerm_windows_virtual_machine" "wvm" {
+  name                = "example-machine"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+  size                = "Standard_F2"
+  admin_username      = var.admin_username
+  admin_password      = var.admin_password
+  network_interface_ids = [
+    azurerm_network_interface.NIC.id,
+  ]
+
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  source_image_reference {
+    publisher = "MicrosoftWindowsServer"
+    offer     = "WindowsServer"
+    sku       = "2016-Datacenter"
+    version   = "latest"
+  }
+}
 
 data "azurerm_public_ip" "ip" {
   name                = azurerm_public_ip.publicip.name
@@ -97,8 +121,9 @@ data "azurerm_public_ip" "ip" {
   depends_on          = [azurerm_virtual_machine.vm]
 }
 module "azure-bastion" {
-  source  = "kumarvna/azure-bastion/azurerm"
-  version = "1.0.0"
+  source     = "kumarvna/azure-bastion/azurerm"
+  depends_on = [azurerm_virtual_network.vnet, azurerm_resource_group.rg]
+  version    = "1.0.0"
 
   # Resource Group, location, VNet and Subnet details
   resource_group_name  = azurerm_resource_group.rg.name
