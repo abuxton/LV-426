@@ -1,5 +1,11 @@
 terraform {
-  backend "s3" {}
+  #backend "s3" {}
+  backend "remote" {
+    organization = "abc-hashi-training"
+    workspaces {
+      name = "LV-426-azure"
+    }
+  }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
