@@ -105,7 +105,7 @@ module "azure-bastion" {
   virtual_network_name = azurerm_virtual_network.vnet.name
 
   # Azure bastion server requireemnts
-  azure_bastion_service_name          = "${prefix}-Bastion-Service"
+  azure_bastion_service_name          = "${var.prefix}-Bastion-Service"
   azure_bastion_subnet_address_prefix = ["10.42.2.0/26"]
 
   # Adding TAG's to your Azure resources (Required)
