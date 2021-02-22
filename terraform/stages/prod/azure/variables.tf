@@ -12,3 +12,8 @@ variable "location" {
   description = "location, or Azure region"
   default     = "uksouth"
 }
+variable "prefix" {
+  type        = string
+  description = "prefix for reusability and identity"
+  default     = "lv-426"
+}

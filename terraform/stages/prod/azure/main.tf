@@ -1,24 +1,24 @@
 resource "azurerm_resource_group" "rg" {
-  name     = "myTFResourceGroup"
+  name     = "${var.prefix}-rg"
   location = var.location
 }
 resource "azurerm_virtual_network" "vnet" {
-  name                = "myTFVnet"
-  address_space       = ["10.0.0.0/16"]
+  name                = "${var.prefix}-VNet"
+  address_space       = ["10.42.0.0/27"]
   location            = var.location
   resource_group_name = azurerm_resource_group.rg.name
 }
 # Create subnet
 resource "azurerm_subnet" "subnet" {
-  name                 = "myTFSubnet"
+  name                 = "${var.prefix}-Subnet"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["10.0.1.0/24"]
+  address_prefixes     = ["10.42.1.0/30"]
 }
 
 # Create public IP
 resource "azurerm_public_ip" "publicip" {
-  name                = "myTFPublicIP"
+  name                = "${var.prefix}-PublicIP"
   location            = var.location
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"
@@ -27,7 +27,7 @@ resource "azurerm_public_ip" "publicip" {
 
 # Create Network Security Group and rule
 resource "azurerm_network_security_group" "nsg" {
-  name                = "myTFNSG"
+  name                = "${var.prefix}-NSG"
   location            = var.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -46,7 +46,7 @@ resource "azurerm_network_security_group" "nsg" {
 
 # Create network interface
 resource "azurerm_network_interface" "nic" {
-  name                = "myNIC"
+  name                = "${var.prefix}-NIC"
   location            = var.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -60,14 +60,14 @@ resource "azurerm_network_interface" "nic" {
 
 # Create a Linux virtual machine
 resource "azurerm_virtual_machine" "vm" {
-  name                  = "myTFVM"
+  name                  = "${var.prefix}-VM"
   location              = var.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.nic.id]
   vm_size               = "Standard_DS1_v2"
 
   storage_os_disk {
-    name              = "myOsDisk"
+    name              = "${var.prefix}-OsDisk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Premium_LRS"
@@ -81,7 +81,7 @@ resource "azurerm_virtual_machine" "vm" {
   }
 
   os_profile {
-    computer_name  = "myTFVM"
+    computer_name  = "${var.prefix}-TFVM"
     admin_username = var.admin_username
     admin_password = var.admin_password
   }
