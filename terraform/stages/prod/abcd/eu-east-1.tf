@@ -1,7 +1,4 @@
-provider "aws" {
-  alias  = "us-east-1"
-  region = "us-east-1"
-}
+
 resource "aws_key_pair" "tg_user_east" {
   provider = aws.us-east-1
   # (resource arguments)

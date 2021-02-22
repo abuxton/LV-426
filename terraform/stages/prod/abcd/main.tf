@@ -2,7 +2,8 @@
 
 module "route53" {
   source = "git::https://github.com/clouddrove/terraform-aws-route53.git?ref=tags/0.12.0"
-  name   = "route53"
+  #source = "git::https://github.com/clouddrove/terraform-aws-route53.git?ref=0.14"
+  name = "route53"
 
   #    application    = "clouddrove"
   environment    = "test"
