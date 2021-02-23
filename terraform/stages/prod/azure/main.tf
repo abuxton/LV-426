@@ -133,9 +133,9 @@ resource "azurerm_windows_virtual_machine" "new_win_vm" {
   size                = "Standard_F2"
   admin_username      = var.admin_username
   admin_password      = var.admin_password
-  network_interface_ids = [
-    azurerm_network_interface.new_win_nic.id,
-  ]
+  #  network_interface_ids = [
+  #     azurerm_network_interface.new_win_nic.id,
+  #  ]
 
   os_disk {
     caching              = "ReadWrite"
@@ -143,7 +143,7 @@ resource "azurerm_windows_virtual_machine" "new_win_vm" {
   }
 
   source_image_reference {
-    publisher = "MicrosoftWindowsServer"
+    publisher = "MicrosoftWindows"
     offer     = "windows-10"
     sku       = "20h2-pro"
     version   = "latest"
