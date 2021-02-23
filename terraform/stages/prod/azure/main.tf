@@ -121,9 +121,9 @@ data "azurerm_public_ip" "ip" {
   depends_on          = [azurerm_virtual_machine.vm]
 }
 module "azure-bastion" {
-  source     = "kumarvna/azure-bastion/azurerm"
-  depends_on = [azurerm_virtual_network.vnet, azurerm_resource_group.rg]
-  version    = "1.0.0"
+  source = "kumarvna/azure-bastion/azurerm"
+  #   depends_on = [azurerm_virtual_network.vnet, azurerm_resource_group.rg]
+  version = "1.0.0"
 
   # Resource Group, location, VNet and Subnet details
   resource_group_name  = azurerm_resource_group.rg.name
