@@ -15,5 +15,5 @@ variable "location" {
 variable "prefix" {
   type        = string
   description = "prefix for reusability and identity"
-  default     = "lv-426"
+  default     = "new-lv-426"
 }
