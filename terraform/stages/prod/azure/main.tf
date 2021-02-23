@@ -150,10 +150,10 @@ resource "azurerm_windows_virtual_machine" "new_win_vm" {
     version   = "latest"
   }
 }
-data "azurerm_public_ip" "new_ip" {
+data "azurerm_public_ip" "new_lvm_ip" {
   name                = azurerm_public_ip.new_publicip.name
-  resource_group_name = azurerm_virtual_machine.new_vm.resource_group_name
-  depends_on          = [azurerm_virtual_machine.new_vm]
+  resource_group_name = azurerm_virtual_machine.new_lvm.resource_group_name
+  depends_on          = [azurerm_virtual_machine.new_lvm]
 }
 // module "azure-bastion" {
 //   source = "kumarvna/azure-bastion/azurerm"
