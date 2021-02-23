@@ -51,7 +51,7 @@ resource "azurerm_network_interface" "nic" {
   resource_group_name = azurerm_resource_group.rg.name
 
   ip_configuration {
-    name                          = "myNICConfg"
+    name                          = "${var.prefix}-NICconfig"
     subnet_id                     = azurerm_subnet.subnet.id
     private_ip_address_allocation = "dynamic"
     public_ip_address_id          = azurerm_public_ip.publicip.id
@@ -99,7 +99,7 @@ resource "azurerm_windows_virtual_machine" "wvm" {
   admin_username      = var.admin_username
   admin_password      = var.admin_password
   network_interface_ids = [
-    azurerm_network_interface.NIC.id,
+    azurerm_network_interface.nic.id,
   ]
 
   os_disk {
