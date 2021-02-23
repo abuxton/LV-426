@@ -94,49 +94,49 @@ resource "azurerm_network_interface" "new_nic" {
 }
 
 # Create a Linux virtual machine
-resource "azurerm_virtual_machine" "new_linux_vm" {
-  name                  = "${var.prefix}-LVM"
-  location              = var.location
-  resource_group_name   = azurerm_resource_group.new_rg.name
-  network_interface_ids = [azurerm_network_interface.new_nic.id]
-  vm_size               = "Standard_DS1_v2"
+// resource "azurerm_virtual_machine" "new_linux_vm" {
+//   name                  = "${var.prefix}-LVM"
+//   location              = var.location
+//   resource_group_name   = azurerm_resource_group.new_rg.name
+//   network_interface_ids = [azurerm_network_interface.new_nic.id]
+//   vm_size               = "Standard_DS1_v2"
 
-  storage_os_disk {
-    name              = "${var.prefix}-OsDisk"
-    caching           = "ReadWrite"
-    create_option     = "FromImage"
-    managed_disk_type = "Premium_LRS"
-  }
+//   storage_os_disk {
+//     name              = "${var.prefix}-OsDisk"
+//     caching           = "ReadWrite"
+//     create_option     = "FromImage"
+//     managed_disk_type = "Premium_LRS"
+//   }
 
-  storage_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "16.04.0-LTS"
-    version   = "latest"
-  }
+//   storage_image_reference {
+//     publisher = "Canonical"
+//     offer     = "UbuntuServer"
+//     sku       = "16.04.0-LTS"
+//     version   = "latest"
+//   }
 
-  os_profile {
-    computer_name  = "${var.prefix}-TFVM"
-    admin_username = var.admin_username
-    admin_password = var.admin_password
-  }
+//   os_profile {
+//     computer_name  = "${var.prefix}-TFVM"
+//     admin_username = var.admin_username
+//     admin_password = var.admin_password
+//   }
 
-  os_profile_linux_config {
-    disable_password_authentication = false
-  }
-}
+//   os_profile_linux_config {
+//     disable_password_authentication = false
+//   }
+// }
+
 # create a windows vm
 resource "azurerm_windows_virtual_machine" "new_win_vm" {
-  name                  = "${var.prefix}-WVM"
-  resource_group_name   = azurerm_resource_group.new_rg.name
-  location              = azurerm_resource_group.new_rg.location
-  size                  = "Standard_F2"
-  admin_username        = var.admin_username
-  admin_password        = var.admin_password
-  network_interface_ids = []
-  // network_interface_ids = [
-  //    azurerm_network_interface.new_win_nic.id,
-  // ]
+  name                = "${var.prefix}-WVM"
+  resource_group_name = azurerm_resource_group.new_rg.name
+  location            = azurerm_resource_group.new_rg.location
+  size                = "Standard_F2"
+  admin_username      = var.admin_username
+  admin_password      = var.admin_password
+  network_interface_ids = [
+    azurerm_network_interface.new_win_nic.id,
+  ]
 
   os_disk {
     caching              = "ReadWrite"
@@ -150,10 +150,11 @@ resource "azurerm_windows_virtual_machine" "new_win_vm" {
     version   = "latest"
   }
 }
-data "azurerm_public_ip" "new_lvm_ip" {
+
+data "azurerm_public_ip" "new_wvm_ip" {
   name                = azurerm_public_ip.new_publicip.name
-  resource_group_name = azurerm_virtual_machine.new_lvm.resource_group_name
-  depends_on          = [azurerm_virtual_machine.new_lvm]
+  resource_group_name = azurerm_virtual_machine.new_win_vm.resource_group_name
+  depends_on          = [azurerm_virtual_machine.new_win_vm]
 }
 // module "azure-bastion" {
 //   source = "kumarvna/azure-bastion/azurerm"
