@@ -135,7 +135,7 @@ resource "azurerm_windows_virtual_machine" "new_win_vm" {
   admin_username      = var.admin_username
   admin_password      = var.admin_password
   network_interface_ids = [
-    azurerm_network_interface.new_win_nic.id,
+    azurerm_network_interface.new_nic.id,
   ]
 
   os_disk {
