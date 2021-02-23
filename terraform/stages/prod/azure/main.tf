@@ -153,8 +153,8 @@ resource "azurerm_windows_virtual_machine" "new_win_vm" {
 
 data "azurerm_public_ip" "new_wvm_ip" {
   name                = azurerm_public_ip.new_publicip.name
-  resource_group_name = azurerm_virtual_machine.new_win_vm.resource_group_name
-  depends_on          = [azurerm_virtual_machine.new_win_vm]
+  resource_group_name = azurerm_windows_virtual_machine.new_win_vm.resource_group_name
+  depends_on          = [azurerm_windows_virtual_machine.new_win_vm]
 }
 // module "azure-bastion" {
 //   source = "kumarvna/azure-bastion/azurerm"
