@@ -1,5 +1,5 @@
-resource "azurerm_resource_group" "new_rg" {
-  name     = "${var.prefix}-rg"
+resource "azurerm_resource_group" "new-rg" {
+  name     = "$new-{var.prefix}-rg"
   location = var.location
 }
 resource "azurerm_virtual_network" "new_vnet" {
@@ -115,11 +115,11 @@ resource "azurerm_windows_virtual_machine" "new_wvm" {
   }
 }
 
-data "azurerm_public_ip" "new_ip" {
-  name                = azurerm_public_ip.new_publicip.name
-  resource_group_name = azurerm_virtual_machine.new_vm.resource_group_name
-  depends_on          = [azurerm_virtual_machine.new_vm]
-}
+// data "azurerm_public_ip" "new_ip" {
+//   name                = azurerm_public_ip.new_publicip.name
+//   resource_group_name = azurerm_virtual_machine.new_vm.resource_group_name
+//   depends_on          = [azurerm_virtual_machine.new_vm]
+// }
 module "azure-bastion" {
   source = "kumarvna/azure-bastion/azurerm"
   #   depends_on = [azurerm_virtual_network.vnet, azurerm_resource_group.rg]
