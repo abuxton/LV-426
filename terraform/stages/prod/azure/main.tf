@@ -43,7 +43,42 @@ resource "azurerm_network_security_group" "new_nsg" {
     destination_address_prefix = "*"
   }
 }
+# Create Network Security Group and rule
+resource "azurerm_network_security_group" "new_ssh_nsg" {
+  name                = "${var.prefix}-ssh-NSG"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.new_rg.name
 
+  security_rule {
+    name                       = "SSH"
+    priority                   = 1001
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "22"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+}
+# Create Network Security Group and rule
+resource "azurerm_network_security_group" "new_rdp_nsg" {
+  name                = "${var.prefix}-RDP-NSG"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.new_rg.name
+
+  security_rule {
+    name                       = "RDP"
+    priority                   = 1001
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "3389"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+}
 # Create network interface
 resource "azurerm_network_interface" "new_nic" {
   name                = "${var.prefix}-NIC"
@@ -59,8 +94,8 @@ resource "azurerm_network_interface" "new_nic" {
 }
 
 # Create a Linux virtual machine
-resource "azurerm_virtual_machine" "new_vm" {
-  name                  = "${var.prefix}-VM"
+resource "azurerm_virtual_machine" "new_linux_vm" {
+  name                  = "${var.prefix}-LVM"
   location              = var.location
   resource_group_name   = azurerm_resource_group.new_rg.name
   network_interface_ids = [azurerm_network_interface.new_nic.id]
@@ -91,15 +126,15 @@ resource "azurerm_virtual_machine" "new_vm" {
   }
 }
 # create a windows vm
-resource "azurerm_windows_virtual_machine" "new_wvm" {
-  name                = "example-machine"
+resource "azurerm_windows_virtual_machine" "new_win_vm" {
+  name                = "${var.prefix}-WVM"
   resource_group_name = azurerm_resource_group.new_rg.name
   location            = azurerm_resource_group.new_rg.location
   size                = "Standard_F2"
   admin_username      = var.admin_username
   admin_password      = var.admin_password
   network_interface_ids = [
-    azurerm_network_interface.new_nic.id,
+    azurerm_network_interface.new_win_nic.id,
   ]
 
   os_disk {
@@ -109,17 +144,16 @@ resource "azurerm_windows_virtual_machine" "new_wvm" {
 
   source_image_reference {
     publisher = "MicrosoftWindowsServer"
-    offer     = "WindowsServer"
-    sku       = "2016-Datacenter"
+    offer     = "windows-10"
+    sku       = "20h2-pro"
     version   = "latest"
   }
 }
-
-// data "azurerm_public_ip" "new_ip" {
-//   name                = azurerm_public_ip.new_publicip.name
-//   resource_group_name = azurerm_virtual_machine.new_vm.resource_group_name
-//   depends_on          = [azurerm_virtual_machine.new_vm]
-// }
+data "azurerm_public_ip" "new_ip" {
+  name                = azurerm_public_ip.new_publicip.name
+  resource_group_name = azurerm_virtual_machine.new_vm.resource_group_name
+  depends_on          = [azurerm_virtual_machine.new_vm]
+}
 // module "azure-bastion" {
 //   source = "kumarvna/azure-bastion/azurerm"
 //   version = "1.0.0"
