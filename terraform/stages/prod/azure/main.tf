@@ -127,15 +127,16 @@ resource "azurerm_virtual_machine" "new_linux_vm" {
 }
 # create a windows vm
 resource "azurerm_windows_virtual_machine" "new_win_vm" {
-  name                = "${var.prefix}-WVM"
-  resource_group_name = azurerm_resource_group.new_rg.name
-  location            = azurerm_resource_group.new_rg.location
-  size                = "Standard_F2"
-  admin_username      = var.admin_username
-  admin_password      = var.admin_password
-  #  network_interface_ids = [
-  #     azurerm_network_interface.new_win_nic.id,
-  #  ]
+  name                  = "${var.prefix}-WVM"
+  resource_group_name   = azurerm_resource_group.new_rg.name
+  location              = azurerm_resource_group.new_rg.location
+  size                  = "Standard_F2"
+  admin_username        = var.admin_username
+  admin_password        = var.admin_password
+  network_interface_ids = []
+  // network_interface_ids = [
+  //    azurerm_network_interface.new_win_nic.id,
+  // ]
 
   os_disk {
     caching              = "ReadWrite"
