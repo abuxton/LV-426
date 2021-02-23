@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "new_rg" {
-  name     = "$new-{var.prefix}-rg"
+  name     = "new-${var.prefix}-rg"
   location = var.location
 }
 resource "azurerm_virtual_network" "new_vnet" {
