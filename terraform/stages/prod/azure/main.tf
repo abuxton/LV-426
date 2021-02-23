@@ -120,25 +120,24 @@ resource "azurerm_windows_virtual_machine" "new_wvm" {
 //   resource_group_name = azurerm_virtual_machine.new_vm.resource_group_name
 //   depends_on          = [azurerm_virtual_machine.new_vm]
 // }
-module "azure-bastion" {
-  source = "kumarvna/azure-bastion/azurerm"
-  #   depends_on = [azurerm_virtual_network.vnet, azurerm_resource_group.rg]
-  version = "1.0.0"
+// module "azure-bastion" {
+//   source = "kumarvna/azure-bastion/azurerm"
+//   version = "1.0.0"
 
-  # Resource Group, location, VNet and Subnet details
-  resource_group_name  = azurerm_resource_group.new_rg.name
-  virtual_network_name = azurerm_virtual_network.new_vnet.name
+//   # Resource Group, location, VNet and Subnet details
+//   resource_group_name  = azurerm_resource_group.new_rg.name
+//   virtual_network_name = azurerm_virtual_network.new_vnet.name
 
-  # Azure bastion server requireemnts
-  azure_bastion_service_name          = "${var.prefix}-Bastion-Service"
-  azure_bastion_subnet_address_prefix = ["10.42.2.0/26"]
+//   # Azure bastion server requireemnts
+//   azure_bastion_service_name          = "${var.prefix}-Bastion-Service"
+//   azure_bastion_subnet_address_prefix = ["10.42.2.0/26"]
 
-  # Adding TAG's to your Azure resources (Required)
-  tags = {
-    ProjectName  = "demo-internal"
-    Env          = "dev"
-    Owner        = "user@example.com"
-    BusinessUnit = "CORP"
-    ServiceClass = "Gold"
-  }
-}
+//   # Adding TAG's to your Azure resources (Required)
+//   tags = {
+//     ProjectName  = "demo-internal"
+//     Env          = "dev"
+//     Owner        = "user@example.com"
+//     BusinessUnit = "CORP"
+//     ServiceClass = "Gold"
+//   }
+// }
