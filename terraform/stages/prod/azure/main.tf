@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "new-rg" {
+resource "azurerm_resource_group" "new_rg" {
   name     = "$new-{var.prefix}-rg"
   location = var.location
 }
