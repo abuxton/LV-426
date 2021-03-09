@@ -33,9 +33,9 @@ repos:
     hooks:
 #       - id: circleci-config-validate
       - id: forbid-binary
-      - id: go-fmt
+#      - id: go-fmt
 #       - id: go-test
-      - id: go-mod-tidy
-      - id: go-generate
+#      - id: go-mod-tidy
+#      - id: go-generate
 #       - id: shellcheck
 #       - id: shfmt
