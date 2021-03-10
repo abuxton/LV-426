@@ -1,6 +1,5 @@
 config {
   module = true
-  deep_check = false
   force = false
 
   #aws_credentials = {
@@ -18,6 +17,10 @@ config {
   #variables = ["foo=bar", "bar=[\"baz\"]"]
 }
 
+plugin "aws" {
+  enabled = true
+  deep_check = true
+}
 rule "terraform_module_pinned_source" {
   enabled = false
   style = "flexible"
