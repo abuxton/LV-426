@@ -1,1 +1,13 @@
-main = rule { true }
+import "sockaddr"
+import "mfa"
+import "strings"
+
+# We expect logins to come only from our private IP range
+cidrcheck = rule {
+    sockaddr.is_contained("10.20.0.0/16", request.connection.remote_addr)
+}
+
+print(request.connection.remote_addr)
+main = rule when strings.has_prefix(request.path, "auth/ldap/login") {
+  cidrcheck
+}
