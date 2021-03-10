@@ -1,5 +1,6 @@
 import "sockaddr"
 import "strings"
+import "request"
 
 # We expect logins to come only from our private IP range
 cidrcheck = rule {
