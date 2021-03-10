@@ -7,7 +7,7 @@ output "das_mc_vsc_ssh_config" {
   description = "remote vsc execution helper"
 }
 output "ssh_config" {
-  value       = "${data.template_file.ssh_config.rendered}"
+  value       = data.template_file.ssh_config.rendered
   description = "ssh config file entry"
 }
 

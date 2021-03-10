@@ -2,7 +2,7 @@ name: TerraGrunt CI Testing
 
 on:
   push:
-    branches-ignore:  
+    branches-ignore:
     - 'master'
 
 jobs:

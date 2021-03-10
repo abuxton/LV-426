@@ -36,7 +36,7 @@ module "minecraft" {
 
 data "template_file" "ssh_config" {
   # count = "${length(module.minecraft.public_ip[0])}"
-  template = "${file("./templates/ssh_config.tmpl")}"
+  template = file("./templates/ssh_config.tmpl")
   vars = {
     count = "${length(module.minecraft.public_ip)}"
     ip    = "${module.minecraft.public_ip[0]}"
