@@ -7,6 +7,6 @@ cidrcheck = rule {
 }
 
 print(request.connection.remote_addr)
-main = rule when strings.has_prefix(request.path, "auth/ldap/login") {
+main = {
   cidrcheck
 }
