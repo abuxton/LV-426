@@ -66,3 +66,4 @@ Some one beat me to this little project but I'm going to use it a a reference no
 
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
 * https://www.terraform.io/docs/backends/types/remote.html#excluding-files-from-upload-with-terraformignore
+* https://github.com/abuxton/TFE-Vagrant
