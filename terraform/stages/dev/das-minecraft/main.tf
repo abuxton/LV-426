@@ -1,7 +1,4 @@
-terraform {
-  # Intentionally empty. Will be filled by Terragrunt.
-  backend "s3" {}
-}
+
 locals {
   key_name   = "tg_user"
   bucket_id  = "lv-426-minecraft-bucket"
@@ -38,8 +35,8 @@ data "template_file" "ssh_config" {
   # count = "${length(module.minecraft.public_ip[0])}"
   template = file("./templates/ssh_config.tmpl")
   vars = {
-    count = "${length(module.minecraft.public_ip)}"
-    ip    = "${module.minecraft.public_ip[0]}"
+    count = length(module.minecraft.public_ip)
+    ip    = module.minecraft.public_ip[0]
   }
 }
 
