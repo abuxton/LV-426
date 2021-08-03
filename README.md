@@ -32,6 +32,7 @@ Some one beat me to this little project but I'm going to use it a a reference no
 * opinionated development kit https://github.com/boltops-tools/terraspace
 * pipeline validation https://github.com/GoogleCloudPlatform/terraform-validator
 * migration tool https://github.com/cneralich/tfe-tfc-migration-tool
+* AWS TE API cli <https://github.com/awslabs/tecli>
 
 ### Config
 
@@ -66,3 +67,4 @@ Some one beat me to this little project but I'm going to use it a a reference no
 
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
 * https://www.terraform.io/docs/backends/types/remote.html#excluding-files-from-upload-with-terraformignore
+* https://github.com/abuxton/TFE-Vagrant
