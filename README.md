@@ -41,6 +41,7 @@ Some one beat me to this little project but I'm going to use it a a reference no
 * command line and credentials, https://blog.gruntwork.io/authenticating-to-aws-with-the-credentials-file-d16c0fbcbf9e
 * gitignore, https://github.com/github/gitignore/blob/master/Terraform.gitignore
 * https://www.terraform.io/docs/commands/cli-config.html#credentials
+* https://github.com/tonedefdev/terracreds
 
 ### Interfaces
 
