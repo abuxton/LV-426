@@ -69,3 +69,15 @@ Some one beat me to this little project but I'm going to use it a a reference no
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
 * https://www.terraform.io/docs/backends/types/remote.html#excluding-files-from-upload-with-terraformignore
 * https://github.com/abuxton/TFE-Vagrant
+
+## Learning
+
+https://learn.hashicorp.com/terraform?utm_source=terraform_io
+all three platforms, and more, plus links to hashicorps public code examples to support the tutorials.
+
+Azures platform best practices https://registry.terraform.io/modules/aztfmod/caf/azurerm/latest
+
+a series of modules for gcp start with the bootstrap one https://github.com/terraform-google-modules all available on the regsitry too.
+
+read up on aws well architected framework and you'll find github/gitlab code for terraform to follow this structure https://rst.software/blog/2020/08/the-5-pillars-of-the-aws-well-architected-framework-i-operational-excellence/
+https://github.com/awslabs/aws-well-architected-labs
